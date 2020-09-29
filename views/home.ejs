@@ -1,0 +1,27 @@
+<!-- We are using our standard layout, standard header and footer files, through ejs include. Dont' forget the "-" -->
+<!-- Can write:  include ("filename") with () and "", but do not have to  -->
+
+<%- include partials/header -%>
+
+<h1>Home</h1>
+<p class="paragraph"><%= openingContent %></p>
+
+
+<% posts.forEach(function(post) { %>
+<h1><%= post.title %> </h1>
+<!-- substring limits # of characters. 1st arg is starting point, 2nd arg is ending point -->
+<!-- Better(?) to use css. See our styles sheet, class truncated. Below will add ... to all content
+    even if less than 100ch. Therefore, below should be in an if statement. Too much logic for me 
+    personally in an html file, I prefer the css method. Below is for future reference. -->
+
+<p><%= post.content.substring(0, 100) + " ..." %>
+    <a href="/posts/ <%=post.title%> ">Read More</a>
+</p>
+
+
+<% }) %>
+
+
+
+
+<%- include partials/footer -%>

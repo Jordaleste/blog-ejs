@@ -1,0 +1,11 @@
+<!-- We are using our standard layout, standard header and footer files, through ejs include. Dont' forget the "-" -->
+<!-- Can write:  include ("filename") with () and "", but do not have to  -->
+
+<%- include partials/header -%>
+
+<h1><%= postTitle %> </h1>
+<p class="paragraph"><%= postContent %> </p>
+
+
+
+<%- include partials/footer %> 
